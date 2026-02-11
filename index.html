@@ -4,8 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GEO Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .card-header {
+            background: #f8f9fa;
+            padding: 20px 25px;
+            border-bottom: 1px solid #eee;
+        }
+        .card-header h2 {
+            font-size: 1.4rem;
+            color: #333;
+        }
+        .card-body {
+            padding: 25px;
+        }
+        .card-body p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .card-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .card-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>GEO Guide</h1>
+        <p>Generative Engine Optimization - Best Practices</p>
+    </header>
+
+    <div class="container" id="content"></div>
+
     <script>
         const geoGuideData = [
             {
@@ -51,6 +132,36 @@
                 image: "images/youtube.png"
             }
         ];
+
+        function renderGuide() {
+            const container = document.getElementById('content');
+
+            geoGuideData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                let imagesHtml = '';
+                if (item.images) {
+                    imagesHtml = item.images.map(img => `<img src="${img}" alt="${item.title}">`).join('');
+                } else if (item.image) {
+                    imagesHtml = `<img src="${item.image}" alt="${item.title}">`;
+                }
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h2><span class="card-number">${item.id}</span>${item.title}</h2>
+                    </div>
+                    <div class="card-body">
+                        ${item.text ? `<p>${item.text}</p>` : ''}
+                        ${imagesHtml}
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        renderGuide();
     </script>
 </body>
 </html>
