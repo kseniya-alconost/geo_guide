@@ -39,7 +39,7 @@
         }
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
         .card {
@@ -145,7 +145,7 @@
             border-radius: 3px;
             font-weight: 500;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .cards-grid {
                 grid-template-columns: 1fr;
             }
@@ -204,14 +204,13 @@
             {
                 id: 7,
                 title: "Brand mentions",
-                html: `<p>Brands with more mentions across different contexts are more likely to appear in AI responses.</p>
-                    <div class="tip-item">
+                html: `<div class="tip-item">
                         <span class="tip-icon tick">✓</span>
                         <span>The brand should be mentioned in <span class="highlight">blogs, anchors, video transcripts, descriptions, and titles</span>.</span>
                     </div>
                     <div class="tip-item">
                         <span class="tip-icon cross">✗</span>
-                        <span><span class="highlight">"Branded anchors"</span> (the visible, clickable text in a hyperlink that features the brand name) and "branded search volume" (the total search volume of all keywords containing the brand name) also correlated with AI visibility—but to a lesser extent.</span>
+                        <span><span class="highlight">"Branded anchors"</span> (the visible, clickable text in a hyperlink that features the brand name) and "branded search volume" (the total search volume of all keywords containing the brand name) trigger AI less.</span>
                     </div>`,
                 image: "images/brand-mentions.png"
             },
