@@ -4,108 +4,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GEO Guide</title>
+    <!-- Alconost Typography: Montserrat for headlines, Noto Sans for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* ===========================================
+           Alconost Style Guide - Light Scheme
+           For documentation, B2B materials
+           =========================================== */
+
+        /* Color Tokens */
+        :root {
+            /* Backgrounds */
+            --bg: #FFFFFF;
+            --surface: #FFFFFF;
+            --soft-bg: #F5F8FF;
+            --soft-accent-bg: #E8F0FF;
+
+            /* Text */
+            --text: #1F1F1F;
+            --text-muted: #666666;
+            --text-subtle: #888888;
+
+            /* Primary */
+            --primary: #007AFF;
+            --primary-dark: #0F1BC5;
+            --primary-contrast: #FFFFFF;
+
+            /* CTA */
+            --cta: #FF492C;
+            --cta-contrast: #FFFFFF;
+
+            /* Accents (limited use in Light scheme) */
+            --accent-primary: #007AFF;
+            --accent-tech: #B8E038;
+            --accent-secondary: #FFF16B;
+            --accent-rare: #FE1197;
+            --success: #00BF56;
+
+            /* UI */
+            --border: #B6CDFF;
+            --border-light: #E0E8F5;
+            --code-bg: #F5F8FF;
+            --code-border: #B6CDFF;
+            --link: #007AFF;
+            --focus: #007AFF;
+
+            /* Typography Scale */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Noto Sans', sans-serif;
+            --font-size-h1: 32px;
+            --font-size-h2: 24px;
+            --font-size-h3: 22px;
+            --font-size-h4: 18px;
+            --font-size-body: 16px;
+            --font-size-small: 14px;
+            --font-size-caption: 12px;
+            --font-size-micro: 11px;
+
+            /* Line Heights */
+            --line-height-tight: 1.2;
+            --line-height-snug: 1.3;
+            --line-height-normal: 1.5;
+            --line-height-relaxed: 1.6;
+            --line-height-ui: 1.4;
+
+            /* Spacing Scale */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 24px;
+            --space-6: 32px;
+            --space-7: 48px;
+            --space-8: 64px;
+
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #1F1F1F;
-            background: #F5F8FF;
+            font-family: var(--font-body);
+            font-size: var(--font-size-body);
+            line-height: var(--line-height-relaxed);
+            color: var(--text);
+            background: var(--soft-bg);
         }
+
+        /* Header */
         header {
-            background: #FFFFFF;
-            color: #1F1F1F;
-            padding: 30px 20px;
+            background: var(--bg);
+            padding: var(--space-6) var(--space-5);
             text-align: center;
-            border-bottom: 3px solid #B6CDFF;
+            border-bottom: 3px solid var(--border);
         }
+
         header h1 {
-            font-size: 2rem;
-            color: #0F1BC5;
-            margin-bottom: 5px;
+            font-family: var(--font-heading);
+            font-size: var(--font-size-h1);
+            font-weight: 700;
+            line-height: var(--line-height-tight);
+            color: var(--primary-dark);
+            margin-bottom: var(--space-2);
         }
+
         header p {
-            font-size: 1rem;
-            color: #007AFF;
+            font-family: var(--font-body);
+            font-size: var(--font-size-body);
+            line-height: var(--line-height-normal);
+            color: var(--primary);
         }
+
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: var(--space-6) var(--space-5);
         }
+
+        /* Cards Grid */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: var(--space-5);
         }
+
+        /* Card */
         .card {
-            background: #FFFFFF;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 1px solid #B6CDFF;
+            border: 1px solid var(--border);
         }
+
         .card-header {
-            background: #F5F8FF;
-            padding: 15px 20px;
-            border-bottom: 1px solid #B6CDFF;
+            background: var(--soft-bg);
+            padding: var(--space-4) var(--space-5);
+            border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: var(--space-3);
         }
+
         .card-header h2 {
-            font-size: 1.1rem;
-            color: #0F1BC5;
+            font-family: var(--font-heading);
+            font-size: var(--font-size-h4);
             font-weight: 600;
+            line-height: var(--line-height-snug);
+            color: var(--primary-dark);
         }
+
         .card-number {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #FF492C;
-            color: #FFFFFF;
-            width: 26px;
-            height: 26px;
+            background: var(--cta);
+            color: var(--cta-contrast);
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
-            font-size: 0.85rem;
+            font-family: var(--font-heading);
+            font-size: var(--font-size-small);
             font-weight: 600;
             flex-shrink: 0;
         }
+
         .card-body {
-            padding: 15px 20px;
+            padding: var(--space-4) var(--space-5);
             flex: 1;
         }
+
         .card-body p {
-            font-size: 0.9rem;
-            color: #1F1F1F;
-            margin-bottom: 15px;
-            line-height: 1.5;
+            font-size: var(--font-size-small);
+            color: var(--text);
+            margin-bottom: var(--space-4);
+            line-height: var(--line-height-normal);
         }
+
+        /* Card Images */
         .card-images {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: var(--space-3);
         }
+
         .card-images img {
             width: 100%;
             max-height: 280px;
             object-fit: contain;
-            border-radius: 6px;
-            background: #F5F8FF;
-            padding: 8px;
-            border: 1px solid #B6CDFF;
+            border-radius: var(--radius-md);
+            background: var(--soft-bg);
+            padding: var(--space-2);
+            border: 1px solid var(--border);
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s ease;
         }
+
         .card-images img:hover {
             transform: scale(1.02);
         }
+
         .card-images.full img {
             max-height: none;
             padding: 0;
@@ -113,6 +223,8 @@
             border-radius: 0;
             background: transparent;
         }
+
+        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -120,47 +232,58 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(31, 31, 31, 0.9);
             z-index: 1000;
             justify-content: center;
             align-items: center;
             cursor: pointer;
         }
+
         .lightbox.active {
             display: flex;
         }
+
         .lightbox img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-radius: var(--radius-md);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
         }
+
         .lightbox-close {
             position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #FFFFFF;
-            font-size: 2rem;
+            top: var(--space-5);
+            right: var(--space-6);
+            color: var(--bg);
+            font-size: var(--font-size-h1);
             cursor: pointer;
+            line-height: 1;
         }
+
+        /* Tags - using accent colors sparingly */
         .tag {
             display: inline-block;
-            background: #00BF56;
-            color: #FFFFFF;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
+            background: var(--success);
+            color: var(--bg);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-micro);
             font-weight: 500;
-            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-3);
         }
+
+        /* Tip Items */
         .tip-item {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            gap: var(--space-3);
+            margin-bottom: var(--space-3);
+            font-size: var(--font-size-small);
+            line-height: var(--line-height-normal);
         }
+
         .tip-icon {
             flex-shrink: 0;
             width: 20px;
@@ -169,54 +292,93 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
-            font-weight: bold;
+            font-size: var(--font-size-caption);
+            font-weight: 600;
             margin-top: 2px;
         }
+
         .tip-icon.tick {
-            background: #00BF56;
-            color: #FFFFFF;
+            background: var(--success);
+            color: var(--bg);
         }
+
         .tip-icon.cross {
-            background: #FE1197;
-            color: #FFFFFF;
+            background: var(--accent-rare);
+            color: var(--bg);
         }
+
+        /* Highlight - using accent yellow sparingly */
         .highlight {
-            background: #FFF16B;
-            padding: 1px 4px;
+            background: var(--accent-secondary);
+            padding: 1px var(--space-1);
             border-radius: 3px;
             font-weight: 500;
         }
+
+        /* Tip Notes */
         .tip-note {
-            font-size: 0.8rem;
-            color: #666;
-            margin-left: 30px;
-            margin-top: 2px;
-            margin-bottom: 8px;
+            font-size: var(--font-size-caption);
+            color: var(--text-muted);
+            margin-left: var(--space-6);
+            margin-top: var(--space-1);
+            margin-bottom: var(--space-2);
+            line-height: var(--line-height-normal);
         }
+
+        /* Sublists */
         .sublist {
-            margin-left: 30px;
-            margin-bottom: 10px;
+            margin-left: var(--space-6);
+            margin-bottom: var(--space-3);
         }
+
         .sublist-item {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
-            margin-bottom: 4px;
+            gap: var(--space-2);
+            font-size: var(--font-size-small);
+            margin-bottom: var(--space-1);
+            line-height: var(--line-height-ui);
         }
+
         .sublist-item::before {
-            content: "•";
-            color: #007AFF;
+            content: "\2022";
+            color: var(--primary);
             font-weight: bold;
         }
+
+        /* Responsive Design */
         @media (max-width: 900px) {
             .cards-grid {
                 grid-template-columns: 1fr;
             }
+
             header h1 {
-                font-size: 1.5rem;
+                font-size: var(--font-size-h2);
             }
+
+            header {
+                padding: var(--space-5) var(--space-4);
+            }
+
+            .container {
+                padding: var(--space-5) var(--space-4);
+            }
+
+            .card-header {
+                padding: var(--space-3) var(--space-4);
+            }
+
+            .card-body {
+                padding: var(--space-3) var(--space-4);
+            }
+        }
+
+        /* Focus states for accessibility */
+        a:focus,
+        button:focus,
+        img:focus {
+            outline: 2px solid var(--focus);
+            outline-offset: 2px;
         }
     </style>
 </head>
@@ -241,15 +403,15 @@
                 id: 2,
                 title: "Short vs. Long form",
                 html: `<div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>Both short and long forms can exist</span>
                     </div>
                     <div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>Answer directly</span>
                     </div>
                     <div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>Write as much as you need to answer the question or cover the topic thoroughly</span>
                     </div>`,
                 image: "images/short-vs-long-form.png"
@@ -258,23 +420,23 @@
                 id: 3,
                 title: "Keywords",
                 html: `<div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>Informational intent</span>
                     </div>
                     <p class="tip-note">99.9% of keywords that trigger AI Overviews are Informational in intent.</p>
                     <div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>Non-branded keywords</span>
                     </div>
                     <p class="tip-note">76.3% of keywords that trigger AIOs are considered non-branded (e.g. localization company), with the remaining 23.7% categorised as branded searches (e.g. Alconost).</p>
                     <div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>5-7 words query</span>
                     </div>
                     <p class="tip-note">The longer the query, the better, and it should be niche specific.</p>
-                    <div class="card-images" style="margin-bottom: 15px;"><img src="images/keywords-query-length.png" alt="Query length"></div>
+                    <div class="card-images" style="margin-bottom: var(--space-4);"><img src="images/keywords-query-length.png" alt="Query length"></div>
                     <div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>Question</span>
                     </div>
                     <p class="tip-note">The query better be a question.</p>
@@ -284,7 +446,7 @@
                 id: 4,
                 title: "Brand mentions",
                 html: `<div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>The brand should be mentioned in:</span>
                     </div>
                     <div class="sublist">
@@ -295,7 +457,7 @@
                         <div class="sublist-item">titles</div>
                     </div>
                     <div class="tip-item">
-                        <span class="tip-icon cross">✗</span>
+                        <span class="tip-icon cross">&#10007;</span>
                         <span>"Branded anchors" (the visible, clickable text in a hyperlink that features the brand name) and "branded search volume" (the total search volume of all keywords containing the brand name) trigger AI less.</span>
                     </div>`,
                 image: "images/brand-mentions.png"
@@ -310,21 +472,21 @@
                 id: 6,
                 title: "Listicles",
                 html: `<div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>"best X" blog lists = 43.8%</span>
                     </div>
                     <div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>The link should be placed as high as possible</span>
                     </div>
-                    <div class="card-images" style="margin-bottom: 15px;"><img src="images/listicles-position.png" alt="Listicles position"></div>
+                    <div class="card-images" style="margin-bottom: var(--space-4);"><img src="images/listicles-position.png" alt="Listicles position"></div>
                     <div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>Agencies and SaaS companies should publish self-promotional "best" lists</span>
                     </div>
                     <p class="tip-note">Countless popular brands like Shopify, Slack, Salesforce, HubSpot, and Superside have written them, and there appears to be no downside from a traditional ranking or AI citation perspective.</p>
                     <div class="tip-item">
-                        <span class="tip-icon tick">✓</span>
+                        <span class="tip-icon tick">&#10003;</span>
                         <span>Listings also should be updated regularly</span>
                     </div>
                     <p class="tip-note">79.1% were last updated in 2025, and 26% were last updated in the past two months alone.</p>
@@ -379,11 +541,11 @@
         const lightboxImg = lightbox.querySelector('img');
         const lightboxClose = lightbox.querySelector('.lightbox-close');
 
-        document.querySelectorAll('.card-images img').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.card-images img')) {
+                lightboxImg.src = e.target.src;
                 lightbox.classList.add('active');
-            });
+            }
         });
 
         lightbox.addEventListener('click', () => {
