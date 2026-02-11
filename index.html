@@ -152,6 +152,22 @@
             margin-top: 2px;
             margin-bottom: 8px;
         }
+        .sublist {
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+        .sublist-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+        .sublist-item::before {
+            content: "•";
+            color: #007AFF;
+            font-weight: bold;
+        }
         @media (max-width: 900px) {
             .cards-grid {
                 grid-template-columns: 1fr;
@@ -204,30 +220,38 @@
                         <span class="tip-icon tick">✓</span>
                         <span><span class="highlight">Informational intent</span></span>
                     </div>
-                    <p class="tip-note"><span class="highlight">99.9%</span> of keywords that trigger AI Overviews are Informational in intent.</p>
+                    <p class="tip-note">99.9% of keywords that trigger AI Overviews are Informational in intent.</p>
                     <div class="tip-item">
                         <span class="tip-icon tick">✓</span>
                         <span><span class="highlight">Non-branded keywords</span></span>
                     </div>
-                    <p class="tip-note"><span class="highlight">76.3%</span> of keywords that trigger AIOs are considered non-branded (e.g. localization company), with the remaining 23.7% categorised as branded searches (e.g. Alconost).</p>
+                    <p class="tip-note">76.3% of keywords that trigger AIOs are considered non-branded (e.g. localization company), with the remaining 23.7% categorised as branded searches (e.g. Alconost).</p>
                     <div class="tip-item">
                         <span class="tip-icon tick">✓</span>
                         <span><span class="highlight">5-7 words query</span></span>
                     </div>
                     <p class="tip-note">The longer the query, the better, and it should be niche specific.</p>
+                    <div class="card-images"><img src="images/keywords-query-length.png" alt="Query length"></div>
                     <div class="tip-item">
                         <span class="tip-icon tick">✓</span>
                         <span><span class="highlight">Question</span></span>
                     </div>
-                    <p class="tip-note">The query better be a question.</p>`,
-                images: ["images/keywords-query-length.png", "images/keywords-question-type.png"]
+                    <p class="tip-note">The query better be a question.</p>
+                    <div class="card-images"><img src="images/keywords-question-type.png" alt="Question type"></div>`
             },
             {
                 id: 4,
                 title: "Brand mentions",
                 html: `<div class="tip-item">
                         <span class="tip-icon tick">✓</span>
-                        <span>The brand should be mentioned in <span class="highlight">blogs, anchors, video transcripts, descriptions, and titles</span>.</span>
+                        <span>The brand should be mentioned in:</span>
+                    </div>
+                    <div class="sublist">
+                        <div class="sublist-item"><span class="highlight">blogs</span></div>
+                        <div class="sublist-item"><span class="highlight">anchors</span></div>
+                        <div class="sublist-item"><span class="highlight">video transcripts</span></div>
+                        <div class="sublist-item"><span class="highlight">descriptions</span></div>
+                        <div class="sublist-item"><span class="highlight">titles</span></div>
                     </div>
                     <div class="tip-item">
                         <span class="tip-icon cross">✗</span>
