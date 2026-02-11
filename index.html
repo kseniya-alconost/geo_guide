@@ -106,6 +106,13 @@
         .card-images img:hover {
             transform: scale(1.02);
         }
+        .card-images.full img {
+            max-height: none;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            background: transparent;
+        }
         .lightbox {
             display: none;
             position: fixed;
@@ -228,8 +235,7 @@
             {
                 id: 1,
                 title: "\"Influenceable\" content types",
-                text: "",
-                image: "images/influenceable-content-types.png"
+                html: `<div class="card-images full"><img src="images/influenceable-content-types.png" alt="Influenceable content types"></div>`
             },
             {
                 id: 2,
@@ -253,23 +259,23 @@
                 title: "Keywords",
                 html: `<div class="tip-item">
                         <span class="tip-icon tick">✓</span>
-                        <span><span class="highlight">Informational intent</span></span>
+                        <span>Informational intent</span>
                     </div>
                     <p class="tip-note">99.9% of keywords that trigger AI Overviews are Informational in intent.</p>
                     <div class="tip-item">
                         <span class="tip-icon tick">✓</span>
-                        <span><span class="highlight">Non-branded keywords</span></span>
+                        <span>Non-branded keywords</span>
                     </div>
                     <p class="tip-note">76.3% of keywords that trigger AIOs are considered non-branded (e.g. localization company), with the remaining 23.7% categorised as branded searches (e.g. Alconost).</p>
                     <div class="tip-item">
                         <span class="tip-icon tick">✓</span>
-                        <span><span class="highlight">5-7 words query</span></span>
+                        <span>5-7 words query</span>
                     </div>
                     <p class="tip-note">The longer the query, the better, and it should be niche specific.</p>
                     <div class="card-images"><img src="images/keywords-query-length.png" alt="Query length"></div>
                     <div class="tip-item">
                         <span class="tip-icon tick">✓</span>
-                        <span><span class="highlight">Question</span></span>
+                        <span>Question</span>
                     </div>
                     <p class="tip-note">The query better be a question.</p>
                     <div class="card-images"><img src="images/keywords-question-type.png" alt="Question type"></div>`
@@ -282,15 +288,15 @@
                         <span>The brand should be mentioned in:</span>
                     </div>
                     <div class="sublist">
-                        <div class="sublist-item"><span class="highlight">blogs</span></div>
-                        <div class="sublist-item"><span class="highlight">anchors</span></div>
-                        <div class="sublist-item"><span class="highlight">video transcripts</span></div>
-                        <div class="sublist-item"><span class="highlight">descriptions</span></div>
-                        <div class="sublist-item"><span class="highlight">titles</span></div>
+                        <div class="sublist-item">blogs</div>
+                        <div class="sublist-item">anchors</div>
+                        <div class="sublist-item">video transcripts</div>
+                        <div class="sublist-item">descriptions</div>
+                        <div class="sublist-item">titles</div>
                     </div>
                     <div class="tip-item">
                         <span class="tip-icon cross">✗</span>
-                        <span><span class="highlight">"Branded anchors"</span> (the visible, clickable text in a hyperlink that features the brand name) and "branded search volume" (the total search volume of all keywords containing the brand name) trigger AI less.</span>
+                        <span>"Branded anchors" (the visible, clickable text in a hyperlink that features the brand name) and "branded search volume" (the total search volume of all keywords containing the brand name) trigger AI less.</span>
                     </div>`,
                 image: "images/brand-mentions.png"
             },
