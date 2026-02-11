@@ -145,6 +145,13 @@
             border-radius: 3px;
             font-weight: 500;
         }
+        .tip-note {
+            font-size: 0.8rem;
+            color: #666;
+            margin-left: 30px;
+            margin-top: 2px;
+            margin-bottom: 8px;
+        }
         @media (max-width: 900px) {
             .cards-grid {
                 grid-template-columns: 1fr;
@@ -192,28 +199,31 @@
             },
             {
                 id: 3,
-                title: "Informational Intent",
-                html: `<p><span class="highlight">99.9%</span> of keywords that trigger AI Overviews are <span class="highlight">Informational</span> in intent.</p>`
+                title: "Keywords",
+                html: `<div class="tip-item">
+                        <span class="tip-icon tick">✓</span>
+                        <span><span class="highlight">Informational intent</span></span>
+                    </div>
+                    <p class="tip-note"><span class="highlight">99.9%</span> of keywords that trigger AI Overviews are Informational in intent.</p>
+                    <div class="tip-item">
+                        <span class="tip-icon tick">✓</span>
+                        <span><span class="highlight">Non-branded keywords</span></span>
+                    </div>
+                    <p class="tip-note"><span class="highlight">76.3%</span> of keywords that trigger AIOs are considered non-branded (e.g. localization company), with the remaining 23.7% categorised as branded searches (e.g. Alconost).</p>
+                    <div class="tip-item">
+                        <span class="tip-icon tick">✓</span>
+                        <span><span class="highlight">5-7 words query</span></span>
+                    </div>
+                    <p class="tip-note">The longer the query, the better, and it should be niche specific.</p>
+                    <div class="tip-item">
+                        <span class="tip-icon tick">✓</span>
+                        <span><span class="highlight">Question</span></span>
+                    </div>
+                    <p class="tip-note">The query better be a question.</p>`,
+                images: ["images/keywords-query-length.png", "images/keywords-question-type.png"]
             },
             {
                 id: 4,
-                title: "Non-branded keywords",
-                html: `<p><span class="highlight">76.3%</span> of keywords that trigger AIOs are considered <span class="highlight">non-branded</span> (e.g. localization company), with the remaining 23.7% categorised as branded searches (e.g. Alconost).</p>`
-            },
-            {
-                id: 5,
-                title: "5-7 words query",
-                html: `<p>The longer the query, the better, and it should be niche specific.</p>`,
-                image: "images/keywords-query-length.png"
-            },
-            {
-                id: 6,
-                title: "Question",
-                html: `<p>The query better be a question.</p>`,
-                image: "images/keywords-question-type.png"
-            },
-            {
-                id: 7,
                 title: "Brand mentions",
                 html: `<div class="tip-item">
                         <span class="tip-icon tick">✓</span>
@@ -226,19 +236,19 @@
                 image: "images/brand-mentions.png"
             },
             {
-                id: 8,
+                id: 5,
                 title: "Pages should be updated regularly",
                 text: "",
                 image: "images/pages-need-updates.png"
             },
             {
-                id: 9,
+                id: 6,
                 title: "Listicles",
                 text: "Across all source links, \"best X\" blog lists represented 43.8% of all page types. The link should be placed as high as possible. Agencies and SaaS companies should publish self-promotional \"best\" lists. Countless popular brands like Shopify, Slack, Salesforce, HubSpot, and Superside have written them, and there appears to be no downside from a traditional ranking or AI citation perspective. Listings also should be updated regularly - 79.1% were last updated in 2025, and 26% were last updated in the past two months alone.",
                 images: ["images/listicles-position.png", "images/listicles-updated.png"]
             },
             {
-                id: 10,
+                id: 7,
                 title: "YouTube",
                 text: "Both AI Mode and AI Overviews are owned by Google—the same parent company as YouTube—and cite YouTube more than any other domain. To clarify, \"YouTube mentions\" refer to any time a brand name crops up in a YouTube video title, transcript, or description—and \"YouTube mention impressions\" are those mentions weighted by the number of views each video received.",
                 image: "images/youtube.png"
